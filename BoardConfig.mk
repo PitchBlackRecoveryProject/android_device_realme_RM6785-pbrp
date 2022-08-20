@@ -14,7 +14,11 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/RMX2001
+ifneq ($(RMX2001_BUILD),true)
+    DEVICE_PATH := device/realme/RM6785
+else
+    DECICE_PATH := device/realme/RMX2001
+endif
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -84,7 +88,13 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+
+ifeq ($(RMX2001_BUILD),true)
+    BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+else
+    BOARD_RECOVERYIMAGE_PARTITION_SIZE := 102760448
+endif
+
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Dynamic Partition
