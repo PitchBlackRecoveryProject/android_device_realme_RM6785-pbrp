@@ -40,6 +40,9 @@ jobs:
               if [[ ${BUILD_RELEASE_TYPE} == "BETA" ]]; then echo "BETA_BUILD=true"  >> $GITHUB_ENV;fi
               if [[ ${BUILD_RELEASE_TYPE} == "OFFICIAL" ]]; then echo "PB_OFFICIAL=true"  >> $GITHUB_ENV;fi
 
+       - name: RM6785 Setup
+         run: if [[ ${GITHUB_ACTION_REPOSITORY} == "PitchBlackRecoveryProject/android_device_realme_RMX2001-pbrp" ]]; then echo "RMX2001_BUILD=true" >>$GITHUB_ENV;fi
+
        - name: Checkout Cleaning Up Runner Repo
          uses: actions/checkout@v2
          with:
