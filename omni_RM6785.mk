@@ -39,6 +39,3 @@ PRODUCT_MODEL := RM6785
 PRODUCT_MANUFACTURER := realme
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
