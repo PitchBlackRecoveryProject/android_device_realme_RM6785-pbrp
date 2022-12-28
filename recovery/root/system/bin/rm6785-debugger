@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+/system/bin/rm -f /cache/logcat.log
+/system/bin/rm -f /cache/decryption.log
+
+/system/bin/logcat -f /cache/logcat.log &
+/system/bin/logcat -f /cache/decryption.log -s keystore2,TeeMcDaemon,mcDriverDaemon,TeeSysClient,recovery,TrustonicKeymaster4DeviceImpl,TlcTeeKeyMaster &
+
+wait
+

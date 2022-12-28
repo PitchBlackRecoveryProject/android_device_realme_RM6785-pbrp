@@ -1,3 +1,5 @@
+import /rm6785.debug.rc
+
 on init
     mkdir /mnt/vendor/persist
     mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
