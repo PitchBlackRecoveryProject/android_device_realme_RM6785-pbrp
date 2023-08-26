@@ -32,10 +32,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock.recovery
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := RMX2001
-PRODUCT_NAME := omni_RMX2001
+PRODUCT_DEVICE := RMX2151
+PRODUCT_NAME := omni_RMX2151
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := realme 6
+PRODUCT_MODEL := realme 7/Narzo 20 Pro/Narzo 30 4G
 PRODUCT_MANUFACTURER := realme
 PRODUCT_SHIPPING_API_LEVEL := 29
 
