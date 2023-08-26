@@ -22,13 +22,7 @@ env:
   SFPassword: ${{ secrets.SFPassword }}
   SFUserName: ${{ secrets.SFUserName }}
   TARGET: "pbrp"
-  EXTRA_CMD: |
-    if [ -d device/realme/RMX2001 ]; then
-      echo "Adapting RM6785 tree for RMX2001"
-      sed -i 's/RM6785/RMX2001/g' device/realme/RMX2001/*.mk
-      mv -v device/realme/RMX2001/omni_{RM6785,RMX2001}.mk
-      sed -i 's/102760448/67108864/' device/realme/RMX2001/BoardConfig.mk
-    fi
+  #EXTRA_CMD: "Extra Commands Here"
 
 jobs:
   PBRP_CI:
@@ -45,10 +39,6 @@ jobs:
               if [[ ${BUILD_RELEASE_TYPE} == "TEST" ]]; then echo "TEST_BUILD=true"  >> $GITHUB_ENV;fi
               if [[ ${BUILD_RELEASE_TYPE} == "BETA" ]]; then echo "BETA_BUILD=true"  >> $GITHUB_ENV;fi
               if [[ ${BUILD_RELEASE_TYPE} == "OFFICIAL" ]]; then echo "PB_OFFICIAL=true"  >> $GITHUB_ENV;fi
-
-       - name: RM6785 Setup
-         run: |
-           if [[ ${GITHUB_ACTION_REPOSITORY} == "PitchBlackRecoveryProject/android_device_realme_RMX2001-pbrp" ]]; then echo "RMX2001_BUILD=true" >>$GITHUB_ENV;fi
 
        - name: Checkout Cleaning Up Runner Repo
          uses: actions/checkout@v2
