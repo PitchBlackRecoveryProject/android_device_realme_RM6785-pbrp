@@ -161,6 +161,7 @@ TW_OZIP_DECRYPT_KEY := 0000
 TW_Y_OFFSET := 115
 TW_H_OFFSET := -115
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/power_supply/battery/temp
+TW_FRAMERATE := 60
 
 # exFAT FS Support
 TW_INCLUDE_FUSE_EXFAT := true
