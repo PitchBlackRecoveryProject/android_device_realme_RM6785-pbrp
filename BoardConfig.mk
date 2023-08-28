@@ -114,7 +114,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 # TWRP Configuration
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 RECOVERY_SDCARD_ON_DATA := true
-TW_DEVICE_VERSION := 4
+TW_DEVICE_VERSION := by EvilAnsh & Hakimi0804 (For RealmeUI 2.0)
 TW_THEME := portrait_hdpi
 TW_Y_OFFSET := 115
 TW_H_OFFSET := -115
@@ -134,3 +134,7 @@ TW_CUSTOM_CPU_TEMP_PATH := /sys/class/power_supply/battery/temp
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# PBRP Build Flags
+PB_TORCH_PATH := "/proc/qcom_flash"
+PB_TORCH_MAX_BRIGHTNESS := 1
